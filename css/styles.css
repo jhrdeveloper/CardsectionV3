@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,300&display=swap');
+
+/* font-family: 'Rubik', sans-serif; */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --mainColor: #3c3c3c;
+    --secondColor: #f2f2f2;
+    --mainFont: 'Rubik', sans-serif;
+    --cardColor: #222222;
+    --cardBorder: 0px 0px 6px 2px #5a5858de;
+}
+
+body{
+    background: var(--mainColor);
+    color: var(--secondColor);
+    font-family: var(--mainFont)
+}
+
+.general-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-container{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+}
+
+.card-principal{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all .7s ease;
+    position: relative;
+    box-shadow: var(--cardBorder);
+    border-radius: 10px;
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    backface-visibility: hidden;
+    background: var(--cardColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.card-front img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.front-title{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.front-title .autotype{
+    font-style: normal;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.back-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    width: 100px;
+    padding-top: 15px;
+    font-size: 1.2rem;
+    align-items: flex-end;
+}
+.back-social a{
+    color: #ffffff;
+}
+
+.card-container:hover .card-principal{
+    transform: rotateY(180deg);
+}
